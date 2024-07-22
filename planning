@@ -1,0 +1,10 @@
+Create a form for user registration.
+Handle form submission and user registration logic
+Create a login form.
+Handle authentication and store user session.
+Display a list of tasks.
+Include buttons for adding, updating, deleting, and marking tasks as complete.
+Display a list of completed tasks with the date they were completed
+Form for adding and updating tasks.
+Inputs for task name, definition, priority, status, and due date.
+Navigation bar with links to Home, Profile, Completed Tasks, and Logout.
