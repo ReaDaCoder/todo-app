@@ -1,4 +1,13 @@
+import { useNavigate, Link} from 'react-router-dom';
 function Login(){
+
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+      // Perform login logic here
+      navigate('/home');
+    };
+
     return(
         <div>
         <h1>Log in to your Account</h1>
@@ -9,7 +18,9 @@ function Login(){
             <input type="text" placeholder="Password"/> <br/>
             <button>Log in</button>
         </form>
-        <button>Go to Home page</button>
+        <button onClick={handleLogin}>Go to Home page</button>
+        <br/>
+        <Link to="signUp">Don't have an account : Sign Up</Link>
             </div>
             <div className="box2">
                 <h1>Task Managaement</h1>
