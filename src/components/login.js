@@ -23,7 +23,7 @@ function Login(){
         <Link to="signUp">Don't have an account : Sign Up</Link>
             </div>
             <div className="box2">
-                <h1>Task Managaement</h1>
+                <h1>Task Management</h1>
                 <img src="/media/todo-pic.jpg" width="400px"/>
             </div>
         </div>
