@@ -19,7 +19,6 @@ function App() {
           <Home/>
           </Route>
 
-
           <Route path="/signUp">
             <SignUp/>
           </Route>

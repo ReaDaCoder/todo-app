@@ -10,3 +10,8 @@
 .box2_{
   margin-left: 35px;
 }
+.todo-grid{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
