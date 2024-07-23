@@ -40,3 +40,31 @@ font-size: 15px
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.input-grid{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  padding-left: 20px;
+  border-radius: 30px;
+  background-color:#edeef0;
+}
+
+.filter-input{
+  flex:1;
+  border:none;
+  outline: none;
+  background: transparent;
+  padding:10px;
+  font-weight: 14px;
+}
+.filter-btn{
+border:none;
+outline: none;
+padding: 16px 50px;
+background-color: #393D84;
+font-size: 16px;
+cursor: pointer;
+border-radius: 40px;
+}
