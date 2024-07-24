@@ -18,9 +18,13 @@ function Home() {
         if (input.trim() === '') {
             alert('Enter task!');
         } else {
-            setTasks([...tasks, input.trim()]);
+            setTasks([...tasks, { text: input.trim(), id: Date.now() }]);
             setInput('');
         }
+    };
+
+    const handleDeleteTask = (id) => {
+        setTasks(tasks.filter(task => task.id !== id));
     };
 
     return (
@@ -40,8 +44,11 @@ function Home() {
                 <button className="filter-btn" onClick={handleAddTask}>Add</button>
             </div>
             <ul id="list-container">
-                {tasks.map((task, index) => (
-                    <li key={index}>{task}</li>
+                {tasks.map((task) => (
+                    <li key={task.id}>
+                        {task.text}
+                        <span onClick={() => handleDeleteTask(task.id)}>DELETE</span>
+                    </li>
                 ))}
             </ul>
         </div>
@@ -49,14 +56,3 @@ function Home() {
 }
 
 export default Home;
-
-
-
-
-
-/*<div className="todo-grid">
-                <div className="task-name">Task Name</div>
-                <div className="definition">Definition</div>
-                <div className="priority">Priority</div>
-                <div className="due">Due date</div>
-            </div>*/
