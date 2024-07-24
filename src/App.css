@@ -72,7 +72,9 @@ font-size: 16px;
 cursor: pointer;
 border-radius: 40px;
 }
-
+#list-container{
+  background-color: #AAB3FF;
+}
 ul li{
   list-style: none;
   font-size: 17px;
@@ -87,9 +89,16 @@ ul li::before{
   height: 28px;
   width:28px;
   border-radius:50%;
-  background-image:url('/media/checked-logo.jpg');
+ /*background-image: url('/media/checked-logo.jpg');*/
   background-size:cover;
   background-position: center;
   top:12px;
   left:8px;
+}
+ul li.ticked{
+  color:#555;
+  text-decoration: line-through;
+}
+ul li.checked::before{
+  background-image: url('/public/media/checked-logo.jpg');
 }
