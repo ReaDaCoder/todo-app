@@ -102,3 +102,9 @@ ul li.ticked{
 ul li.checked::before{
   background-image: url('/public/media/checked-logo.jpg');
 }
+
+.signup-box{
+  justify-content: center;
+  text-align: center;
+  margin-top: 60px;
+}

@@ -1,12 +1,13 @@
 function SignUp(){
     return(
-        <div>
+        <div className="signup-box">
+            <h1>Sign up</h1>
             <form>
-                <input type="text" placeholder="First Name"/>
-                <input type="text" placeholder="Last Name"/>
-                <input type="text" placeholder="Email"/>
-                <input type="text" paceholder="Password"/>
-                <input type="text" placeholder="Confirm Password"/>
+                <input type="text" placeholder="First Name"/><br/>
+                <input type="text" placeholder="Last Name"/><br/>
+                <input type="text" placeholder="Email"/><br/>
+                <input type="text" placeholder="Password"/><br/>
+                <input type="text" placeholder="Confirm Password"/><br/>
                 <button>Sign Up</button>
             </form>
         </div>
