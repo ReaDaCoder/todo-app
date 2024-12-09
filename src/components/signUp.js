@@ -1,14 +1,76 @@
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 function SignUp(){
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    const postData = () =>{
+        axios.post('http://localhost:3000/users', {
+          name,
+          surname,
+          email,
+          password,
+          confirmPassword
+        }).then((res)=>{
+          alert('Registered Successfully')
+          navigate('/HomePage');
+        }).catch((err)=>{
+          alert('Failed to register user due to :'+ err.message);
+        });
+  
+      }
+      
+        const [error, setError] = useState("");
+  
     return(
         <div className="signup-box">
             <h1>Sign up</h1>
             <form>
-                <input type="text" placeholder="First Name"/><br/>
-                <input type="text" placeholder="Last Name"/><br/>
-                <input type="text" placeholder="Email"/><br/>
-                <input type="text" placeholder="Password"/><br/>
-                <input type="text" placeholder="Confirm Password"/><br/>
-                <button>Sign Up</button>
+            <input
+          type="text"
+          name="name"
+          placeholder="First Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        /><br/>
+        <input
+          type="text"
+          name="surname"
+          placeholder="Last Name"
+          value={surname}
+          onChange={(e) => setSurname(e.target.value)}
+          required
+        /><br/>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        /><br/>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        /><br/>
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          required
+        /><br/>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
     )
