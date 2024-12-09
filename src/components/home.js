@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
+import { Button,Table, Checkbox, Form } from 'semantic-ui-react'
 
 
 function Home() {
+    const [apiData, setApiData] = useState([]);
     const [input, setInput] = useState('');
     const [tasks, setTasks] = useState(() => {
         const storedTasks = localStorage.getItem('tasks');
@@ -44,14 +46,37 @@ function Home() {
                 />
                 <button className="filter-btn" onClick={handleAddTask}>Add</button>
             </div>
-            <ul id="list-container">
-                {tasks.map((task) => (
-                    <li key={task.id}>
-                        {task.text}
-                        <span onClick={() => handleDeleteTask(task.id)}>DELETE</span>
-                    </li>
-                ))}
-            </ul>
+            <Table celled>
+                 <Table.Header>
+                     <Table.Row>
+                         <Table.HeaderCell> Task Name</Table.HeaderCell>
+                         <Table.HeaderCell>Definition</Table.HeaderCell>
+                         <Table.HeaderCell>Priority</Table.HeaderCell>
+                         <Table.HeaderCell>Status</Table.HeaderCell>
+                         <Table.HeaderCell>Due date</Table.HeaderCell>
+                     </Table.Row>
+                 </Table.Header>
+
+                 <Table.Body>
+                     {apiData.map((data) => (
+                        <Table.Row key={data.id}>
+                            <Table.Cell>{data.taskName}</Table.Cell>
+                            <Table.Cell>{data.definition}</Table.Cell>
+                            <Table.Cell>{data.priority}</Table.Cell>
+                            <Table.Cell>{data.status}</Table.Cell>
+                            <Table.Cell>{data.dueDate}</Table.Cell>
+                            <Table.Cell>
+                                <Link to='/Update'>
+                                     <Button>Update</Button>
+                                 </Link>
+                                 <Button color='red' onClick={() => handleDeleteTask(data.id)}>
+                                     Delete
+                                </Button>
+                           </Table.Cell>
+                       </Table.Row>
+                       ))}
+              </Table.Body>
+             </Table>
         </div>
     );
 }
