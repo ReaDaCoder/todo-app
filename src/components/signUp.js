@@ -27,11 +27,19 @@ function SignUp(){
       }
       
         const [error, setError] = useState("");
+
+        function RegisterUser(ev) {
+            ev.preventDefault();
+            let details = {name, surname, email, password, confirmPassword};
+            console.log(details);
+            postData();
+          
+          }
   
     return(
         <div className="signup-box">
             <h1>Sign up</h1>
-            <form>
+            <form onSubmit={RegisterUser}>
             <input
           type="text"
           name="name"

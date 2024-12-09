@@ -1,4 +1,13 @@
 {
-    "users":[],
-    "todos":[]
+  "users": [
+    {
+      "id": "d02c",
+      "name": "Admin",
+      "surname": "Test",
+      "email": "admin@gmail.com",
+      "password": "654321",
+      "confirmPassword": "654321"
+    }
+  ],
+  "todos": []
 }
